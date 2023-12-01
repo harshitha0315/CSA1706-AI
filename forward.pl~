@@ -1,0 +1,22 @@
+% Facts about animals and their characteristics
+has_feathers(sparrow).
+has_feathers(penguin).
+has_scales(snake).
+has_wings(sparrow).
+has_wings(penguin).
+lays_eggs(sparrow).
+lays_eggs(penguin).
+can_swim(penguin).
+can_crawl(snake).
+
+% Rules for determining if an animal is a bird
+bird(X) :-
+    has_feathers(X),
+    has_wings(X),
+    lays_eggs(X),
+    not(can_swim(X)).
+bird(X) :-
+    write(X), write(' is a bird.').
+
+bird(X) :-
+    write(X), write(' is not a bird.').

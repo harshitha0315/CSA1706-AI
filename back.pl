@@ -1,0 +1,35 @@
+% Facts about animals and their characteristics
+has_feathers(sparrow).
+has_feathers(penguin).
+has_scales(snake).
+has_wings(sparrow).
+has_wings(penguin).
+lays_eggs(sparrow).
+lays_eggs(penguin).
+can_swim(penguin).
+can_crawl(snake).
+
+% Rule to determine if an animal is a bird
+bird(X) :-
+    has_feathers(X),
+    has_wings(X),
+    lays_eggs(X).
+not_bird(X):-
+    can_swim(X).
+
+% Backward chaining rule to check if an animal is a bird
+is_bird(X) :-
+    bird(X),
+    write(X), write(' is a bird.').
+
+is_bird(X) :-
+    not_bird(X),
+    write(X), write(' is not a bird.').
+
+% Example queries
+% Uncomment and run the queries to see the results
+
+% is_bird(sparrow).
+% is_bird(penguin).
+% is_bird(snake).
+% is_bird(dolphin).

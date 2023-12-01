@@ -1,0 +1,14 @@
+name(john,flu).
+name(boo,cold).
+name(m,allergy).
+disease(cold, [cough, fever, fatigue]).
+disease(flu, [fever, cough, headache, fatigue]).
+disease(measles, [fever, cough, rash]).
+disease(allergy, [rash, fatigue]).
+
+% Define a rule for diagnosis
+diagnosis(Disease, Symptoms) :-
+    disease(Disease, Symptoms).
+patient(Name,Disease):-
+    name(Name,Disease).
+

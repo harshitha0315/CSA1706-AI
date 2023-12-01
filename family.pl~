@@ -1,0 +1,27 @@
+% Facts
+male(john).
+male(bob).
+male(jim).
+female(jane).
+female(susan).
+female(lisa).
+
+% Relationships
+parent(john, bob).
+parent(john, jim).
+parent(susan, bob).
+parent(susan, jim).
+parent(bob, lisa).
+parent(jane, lisa).
+
+% Rules
+father(X, Y) :- male(X), parent(X, Y).
+mother(X, Y) :- female(X), parent(X, Y).
+sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.
+
+% Queries
+% Example queries:
+% ?- father(john, bob).
+% ?- mother(susan, bob).
+% ?- sibling(jim, lisa).
+% ?- sibling(bob, lisa).

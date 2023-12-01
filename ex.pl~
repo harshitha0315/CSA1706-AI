@@ -1,0 +1,6 @@
+sum_in(1,1).
+sum_in(N,sum):-
+    N>1,
+    Prev is N-1,
+    sum_in(Prev,Prevsum),
+    sum is Prevsum+N.
